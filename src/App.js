@@ -3,10 +3,19 @@ import {connect} from "react-redux";
 import axios from "axios";
 import CardExampleCard from "./components/BookCard"
 import 'semantic-ui-css/semantic.min.css';
+import Menu from "./components/Menu"
+import MenuFilter from "./components/Filter"
+
 
 class App extends Component {
 
+//Загрузка книг с сервера из файла json/ Load books off server from file json.
 componentWillMount() {
+const a=[1,2,3,7];
+console.log(a.map((x)=>x*2));
+console.log(a.filter((x)=>x==3));
+
+
 const {LoadBooks}=this.props;
 axios.get("http://localhost:3000/books.json").then(response=> {
 LoadBooks(response.data); console.log(response.data)}
@@ -25,14 +34,18 @@ this.addBook.bind(this)}>Add Book </button>
 render() {
 const {testStore}=this.props;
 
-//Загрузка книг из файла json/ Load books from file json.
+//Извлечение данных книг из файла json/ Read off data books from file json.
 return (
-<content>
+<section>
+<Menu />
+<MenuFilter />
+<div>
 {!testStore ? "Загрузка..."
 : this.props.testStore.map((book, index)=>
 <CardExampleCard book={book} key={index}/>
 )}
-</content>
+</div>
+</section>
 );
 }
 }
