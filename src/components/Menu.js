@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Menu } from 'semantic-ui-react'
 import Cart from "./Cart"
 
-export default class Menu extends Component {
+export default class MenuRoot extends Component {
  state = {}
 
  handleItemClick = (e, { name }) => {  console.log( e); this.setState({ activeItem: name })}

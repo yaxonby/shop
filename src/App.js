@@ -37,6 +37,8 @@ const {testStore}=this.props;
 //Извлечение данных книг из файла json/ Read off data books from file json.
 return (
 <section>
+<Menu />
+<Filter />
 
 <div>
 {!testStore ? "Загрузка..."
@@ -65,8 +67,3 @@ dispatch => ({
   }
 })
 )(App)
-
-
-
-//<Menu />
-//<Filter />

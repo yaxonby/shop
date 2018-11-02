@@ -4,7 +4,7 @@ import { Input, Menu } from 'semantic-ui-react'
 export default class Filter extends Component {
   state = { activeItem: 'all' }
 
-  handleItemClick = (e, { name }) => (console.log(e); this.setState({ activeItem: name }))
+  handleItemClick = (e, { name }) => {console.log(e); this.setState({ activeItem: name })}
 
   render() {
     const { activeItem } = this.state
