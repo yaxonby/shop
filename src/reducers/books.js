@@ -1,6 +1,7 @@
 
 const initialState={
-ItemBook: null
+ItemBook: null,
+filterbY:"all"
 }
 
 export default function booksReducer (state=initialState, action) {

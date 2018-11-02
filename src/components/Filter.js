@@ -4,7 +4,7 @@ import { Input, Menu } from 'semantic-ui-react'
 export default class Filter extends Component {
   state = { activeItem: 'all' }
 
-  handleItemClick = (e, { name }) => {console.log(e); this.setState({ activeItem: name })}
+  handleItemClick = (e, { name }) => { this.setState({ activeItem: name })}
 
   render() {
     const { activeItem } = this.state
@@ -22,7 +22,7 @@ export default class Filter extends Component {
           name='author'
           active={activeItem === 'author'}
           onClick={this.handleItemClick}>
-          По автору..
+          По автору
           </Menu.Item>
 
         <Menu.Item
