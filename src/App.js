@@ -4,7 +4,7 @@ import axios from "axios";
 import CardExampleCard from "./components/BookCard"
 import 'semantic-ui-css/semantic.min.css';
 import Menu from "./components/Menu"
-import MenuFilter from "./components/Filter"
+import Filter from "./components/Filter"
 
 
 class App extends Component {
@@ -37,8 +37,7 @@ const {testStore}=this.props;
 //Извлечение данных книг из файла json/ Read off data books from file json.
 return (
 <section>
-<Menu />
-<MenuFilter />
+
 <div>
 {!testStore ? "Загрузка..."
 : this.props.testStore.map((book, index)=>
@@ -66,3 +65,8 @@ dispatch => ({
   }
 })
 )(App)
+
+
+
+//<Menu />
+//<Filter />
