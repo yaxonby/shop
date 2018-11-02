@@ -1,16 +1,12 @@
-import Reacr from "react";
-import FilterComponent from "../components/Filter"
+import React, {Component} from "react";
+import {connect} from "react-redux";
+import FilterMenu from "../components/FilterMenu";
 
 
-function mapStateToProps() {
-return
-}
-
-function mapDispatchToProps() {
-  return
-}
-
-
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(Filter)
+export default connect(
+(state)=> ({
+  FilterSort: state.books.FilterBy,
+  Books: state.books.ItemBook}),
+(dispatch) => ({
+  AddFilterSort: (sort) =>{dispatch({type:"FILTER_SORT", payload: sort})}
+}))(FilterMenu)
