@@ -2,7 +2,7 @@ import React from 'react'
 import { Card, Icon, Image } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
 
- const CardExampleCard = (props) =>{
+const CardExampleCard = (props) =>{
 const {book}=props;
 function addBookToCart(e) {
 console.log(e)
@@ -19,7 +19,7 @@ console.log(e)
       <Card.Description>Цена: {book.price} руб.</Card.Description>
     </Card.Content>
     <Card.Content extra>
-      <a>
+      <a href="">
         <Icon name='chart line' /> Рейтинг: {book.rating}
       </a>
 

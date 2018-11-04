@@ -1,7 +1,5 @@
-import React, {Component} from "react";
 import {connect} from "react-redux";
 import FilterMenu from "../components/FilterMenu";
-
 
 export default connect(
 (state)=> ({

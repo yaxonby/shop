@@ -6,7 +6,6 @@ import 'semantic-ui-css/semantic.min.css';
 import Menu from "./components/Menu"
 import Filter from "./containers/Filter"
 
-
 class App extends Component {
 
 //Загрузка книг с сервера из файла json/ Load books off server from file json.

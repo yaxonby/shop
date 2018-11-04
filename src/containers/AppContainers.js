@@ -1,7 +1,4 @@
-import React, {Component} from "react";
 import {connect} from "react-redux";
-import axios from "axios";
-import 'semantic-ui-css/semantic.min.css';
 import AppComponent  from "../components/AppComponent"
 import orderBy from "lodash/orderBy";
 
@@ -17,7 +14,6 @@ case "price_low": console.log("Filter=",filter,orderBy(Books, filter, "asc")); r
  default: console.log("Filter=",filter,orderBy(Books, filter, "asc")); return orderBy(Books, "price", "asc"); ;
 }
 }
-
 
 export default connect(
 state=> ({

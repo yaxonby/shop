@@ -1,28 +1,18 @@
 import React, { Component } from 'react';
-import { Input, Menu } from 'semantic-ui-react';
-import orderBy from "lodash/orderBy";
+import { Menu } from 'semantic-ui-react';
 
 export default class FilterMenu extends Component {
 
 Add() {
   console.log(this.textInput.value)
+//  this.AddFilterSort(this.textInput.value);
 }
-
-  //state = { activeItem: 'all' }
-
-  //handleItemClick = (e, { name }) => { this.setState({ activeItem: name })}
 
   render() {
     console.log(this.props)
-  //  const { Books, FilterSort} = this.props;
 
-  //  const { activeItem } = this.state
-  //  console.log( this.state)
  const { AddFilterSort } = this.props;
 
-
-//const { activeItem } = this.props.FilterSort;
-//function AddFilterSort (a) {console.log(a)}
     return (
       <Menu secondary>
 

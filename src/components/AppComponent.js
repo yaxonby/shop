@@ -1,8 +1,6 @@
 import React, {Component} from "react";
-import {connect} from "react-redux";
 import axios from "axios";
 import CardExampleCard from "./BookCard"
-import 'semantic-ui-css/semantic.min.css';
 import Menu from "./Menu"
 import Filter from "../containers/Filter"
 
@@ -10,9 +8,6 @@ export default class AppComponent extends Component  {
 
 //Загрузка книг с сервера из файла json/ Load books off server from file json.
 componentWillMount() {
-const a=[1,2,3,7];
-console.log(a.map((x)=>x*2));
-console.log(a.filter((x)=>x==3));
 
 const {LoadBooks}=this.props;
 axios.get("http://localhost:3000/books.json").then(response=> {
