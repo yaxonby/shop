@@ -3,18 +3,25 @@ import { Input, Menu } from 'semantic-ui-react';
 import orderBy from "lodash/orderBy";
 
 export default class FilterMenu extends Component {
+
+Add() {
+  console.log(this.textInput.value)
+}
+
   //state = { activeItem: 'all' }
 
   //handleItemClick = (e, { name }) => { this.setState({ activeItem: name })}
 
   render() {
     console.log(this.props)
-    const { Books, FilterSort} = this.props;
-  
+  //  const { Books, FilterSort} = this.props;
+
   //  const { activeItem } = this.state
   //  console.log( this.state)
  const { AddFilterSort } = this.props;
-const { activeItem } = this.props.FilterSort;
+
+
+//const { activeItem } = this.props.FilterSort;
 //function AddFilterSort (a) {console.log(a)}
     return (
       <Menu secondary>
@@ -46,6 +53,11 @@ const { activeItem } = this.props.FilterSort;
           По стоимости с дешевых
           </Menu.Item>
 
+
+          <input type="text" icon="search"
+            name='search' placeholder='Найти книгу...'
+            ref={(input)=>{this.textInput=input}}
+          onChange={this.Add.bind(this)} />
       </Menu>
     )
   }

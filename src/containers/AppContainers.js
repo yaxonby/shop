@@ -13,7 +13,8 @@ case "popular": {console.log("Filter=",filter,orderBy(Books, filter, "desc")); r
  case "author": console.log("Filter=",filter,orderBy(Books, filter, "desc")); return orderBy(Books, "author", "asc");
  case "price_high": console.log("Filter=",filter, orderBy(Books, filter, "desc")); return orderBy(Books, "price", "desc");
 case "price_low": console.log("Filter=",filter,orderBy(Books, filter, "asc")); return orderBy(Books, "price", "asc");
- default: return Books ;
+
+ default: console.log("Filter=",filter,orderBy(Books, filter, "asc")); return orderBy(Books, "price", "asc"); ;
 }
 }
 
