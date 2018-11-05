@@ -11,7 +11,7 @@ Add() {
   render() {
     console.log(this.props)
 
- const { AddFilterSort } = this.props;
+ const { AddFilterSort,   FilterSort, setSearchQuery } = this.props;
 
     return (
       <Menu secondary>
@@ -47,8 +47,12 @@ Add() {
           <input type="text" icon="search"
             name='search' placeholder='Найти книгу...'
             ref={(input)=>{this.textInput=input}}
-          onChange={this.Add.bind(this)} />
+          onChange={e=> setSearchQuery(e.target.value)}
+
+          />
       </Menu>
     )
   }
 }
+
+//value={FilterSort}

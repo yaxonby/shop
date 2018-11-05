@@ -1,6 +1,7 @@
 const initialState={
 ItemBook: null,
-FilterBy:"all"
+FilterBy:"all",
+FilterWord:""
 }
 
 export default function booksReducer (state=initialState, action) {
@@ -18,6 +19,14 @@ console.log("action.type", action.type)
     FilterBy: action.payload
   };
   }
+
+  if (action.type==="FILTER_SORT_SEARCH_WORD") {
+    return   {
+    ...state,
+    FilterWord: action.payload
+  };
+  }
+
 
   return state
 }

@@ -2,22 +2,45 @@ import {connect} from "react-redux";
 import AppComponent  from "../components/AppComponent"
 import orderBy from "lodash/orderBy";
 
-function SortBy(Books, filter) {
-
-orderBy(Books, "price", "desc")
+function SortBy(Books, filter, searchWord) {
+//orderBy(Books, "price", "desc")
 switch (filter) {
 case "popular": {console.log("Filter=",filter,orderBy(Books, filter, "desc")); return (orderBy(Books, "rating", "asc"))};
- case "author": console.log("Filter=",filter,orderBy(Books, filter, "desc")); return orderBy(Books, "author", "asc");
- case "price_high": console.log("Filter=",filter, orderBy(Books, filter, "desc")); return orderBy(Books, "price", "desc");
+case "author": console.log("Filter=",filter,orderBy(Books, filter, "desc")); return orderBy(Books, "author", "asc");
+case "price_high": console.log("Filter=",filter, orderBy(Books, filter, "desc")); return orderBy(Books, "price", "desc");
 case "price_low": console.log("Filter=",filter,orderBy(Books, filter, "asc")); return orderBy(Books, "price", "asc");
 
  default: console.log("Filter=",filter,orderBy(Books, filter, "asc")); return orderBy(Books, "price", "asc"); ;
 }
 }
 
+function serch(Books, filter, searchWord){
+
+const ArraySort=SortBy(Books, filter, searchWord)
+searchWord=searchWord.toLowerCase()
+
+/*
+for(let a of ArraySort){
+let aTitle, aAuthor
+aTitle=a.title.toLowerCase().indexOf(searchWord)
+aAuthor=a.author.toLowerCase().indexOf(searchWord)
+if (aTitle>=0) {console.log(a.title); return a}
+if (aAuthor>=0) {console.log(a.author); return a}
+}
+*/
+
+return ArraySort.filter(function(x) {
+  let aTitle, aAuthor
+  aTitle=x.title.toLowerCase().indexOf(searchWord)
+  aAuthor=x.author.toLowerCase().indexOf(searchWord)
+  return ((aTitle>=0) || (aAuthor>=0))
+})
+
+}
+
 export default connect(
 state=> ({
-  testStore: SortBy(state.books.ItemBook, state.books.FilterBy)
+  testStore: serch(state.books.ItemBook, state.books.FilterBy, state.books.FilterWord)
 }),
 dispatch => ({
   AddBooks: (book)=> {
