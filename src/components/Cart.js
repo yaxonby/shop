@@ -7,10 +7,8 @@ constructor (props) {
 }
 
 popUpCart() {
-this.setState(prevState => ({
-      popUp: !prevState.popUp
-    }));
-console.log(this.state.popUp)
+this.setState(prevState => ({  popUp: !prevState.popUp  }));
+console.log("Гюльчитай открой корзину",this.state.popUp)
 }
 render ()
 {
