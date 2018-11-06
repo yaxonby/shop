@@ -10,3 +10,21 @@ align-conten: center;
 .CartMenu {
 cursor:pointer
 }
+
+.popUpCart {
+  width: 200px;
+ border: 1px solid grey;
+overflow: hidden;
+}
+
+.ButtonAddCart   {
+vertical-align: middle;
+height: 30px;
+cursor:pointer;
+background-color: rgb(28, 183, 101);
+text-align: center;
+}
+
+.ButtonAddCart:hover {
+background-color: rgb(47, 223, 131);
+}

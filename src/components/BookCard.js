@@ -25,6 +25,7 @@ console.log(e)
 
       <div onClick={addBookToCart(this)}>  Купить </div>
     </Card.Content>
+    <div class="ButtonAddCart"> Добавить в корзину   </div>
   </Card>
 )}
 
