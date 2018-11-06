@@ -4,7 +4,6 @@ export default class Cart extends React.Component {
 constructor (props) {
   super(props)
   this.state={popUp:false}
-
 }
 
 popUpCart() {
@@ -13,7 +12,8 @@ console.log("Гюльчитай открой корзину",this.state.popUp)
 }
 render ()
 {
-  const visibleCart=this.state.popUp ? "block": "none"
+const visibleCart=this.state.popUp ? "block": "none"
+const {ItemToCart, deleteItemToCart}=this.props
 return (
   <article  class="CartMenu"  onClick={this.popUpCart.bind(this)} >
   Корзина:
@@ -22,15 +22,28 @@ return (
  цена ()<span>{}</span> </div>
 <div>    </div>
 
-<div class="popUpCart"  style={ {display:visibleCart, position:"absolute" } }>
-
-
+<div class="popUpCart"  style={ {display:visibleCart } }>
 
 Cart
 <br />
 {console.log(this.state.popUp)}
 list <br />
 .....
+
+<ul>
+
+{
+ItemToCart.map(function(elem, index) {
+return (
+<li key={index}> {elem.title}</li>
+)
+}
+)
+}
+
+
+
+</ul>
  </div>
   </article>
 )}

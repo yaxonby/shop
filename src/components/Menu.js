@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Menu } from 'semantic-ui-react'
-import Cart from "./Cart"
+import Cart from "../containers/CartsContainers"
 
 export default class MenuRoot extends Component {
  state = {}
