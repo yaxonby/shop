@@ -38,8 +38,6 @@ dispatch => ({
   LoadBooks: (books)=> {
     dispatch({type: "SET_BOOKS", payload: books});
   },
-  AddItemCart: (cart) =>{
-  dispatch({type:"ADD_ITEM_CART", payload: cart})
-  }
+  AddItemCart: (book) => dispatch({type:"ADD_ITEM_CART", payload: book})
 })
 )(AppComponent)

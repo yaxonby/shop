@@ -37,7 +37,7 @@ const {testStore}=this.props;
 <div>
 {!testStore ? "Загрузка..."
 : this.props.testStore.map((book, index)=>
-<CardExampleCard book={book} key={index}/>
+<CardExampleCard AddItemCart={this.props.AddItemCart} book={book} key={index}/>
 )}
 </div>
 

@@ -4,9 +4,7 @@ import 'semantic-ui-css/semantic.min.css';
 
 const CardExampleCard = (props) =>{
 const {book}=props;
-function addBookToCart(e) {
-console.log(e)
-}
+const {AddItemCart}=props
 
  return (
   <Card>
@@ -22,11 +20,11 @@ console.log(e)
       <a href="">
         <Icon name='chart line' /> Рейтинг: {book.rating}
       </a>
-
-      <div onClick={addBookToCart(this)}>  Купить </div>
     </Card.Content>
-    <div class="ButtonAddCart"> Добавить в корзину   </div>
+    <div class="ButtonAddCart" onClick={AddItemCart.bind(this, book)}>  Добавить в корзину </div>
   </Card>
 )}
 
 export default CardExampleCard
+
+//onClick={AddFilterSort.bind(this,"author")}

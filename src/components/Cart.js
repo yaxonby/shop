@@ -14,6 +14,7 @@ render ()
 {
 const visibleCart=this.state.popUp ? "block": "none"
 const {ItemToCart, deleteItemToCart}=this.props
+
 return (
   <article  class="CartMenu"  onClick={this.popUpCart.bind(this)} >
   Корзина:
@@ -24,12 +25,10 @@ return (
 
 <div class="popUpCart"  style={ {display:visibleCart } }>
 
-Cart
+Покупки:
 <br />
 {console.log(this.state.popUp)}
-list <br />
-.....
-
+<br />
 <ul>
 
 {

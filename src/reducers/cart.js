@@ -21,7 +21,7 @@ const InitialState={
 
 export default function cart(state=InitialState, action) {
 switch (action.payload) {
-case "ADD_ITEM_CART" : return {...state, ItemToCart: action.payload};
+//case "ADD_ITEM_CART" : console.log({...state, ItemToCart: action.payload});  return {...state, ItemToCart: action.payload};
 case "DELETE_ITEM_CART" : return {...state.ItemToCart.filter(
 function(elem) {
 return (
