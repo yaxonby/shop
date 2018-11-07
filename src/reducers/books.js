@@ -2,6 +2,8 @@ const initialState={
 ItemBook: null,
 FilterBy:"all",
 FilterWord:"",
+
+//данные в  ItemToCart должны лежать в cart но от туда нет доступа в контейнере APP
 ItemToCart:[{
   "id": 0,
   "title": "Происхождение",
