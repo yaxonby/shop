@@ -25,7 +25,7 @@ switch (action.payload) {
 case "DELETE_ITEM_CART" : return {...state.ItemToCart.filter(
 function(elem) {
 return (
-action.payload===elem.ItemToCart.id)
+action.payload!==elem.ItemToCart.id)
 }
 )};
 default : return state
