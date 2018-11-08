@@ -8,7 +8,6 @@ export default class MenuRoot extends Component {
 
   render() {
    const { activeItem } = this.state
-     console.log( this.state)
 
     return (
       <Menu>
@@ -31,7 +30,7 @@ export default class MenuRoot extends Component {
           Корзина
         </Menu.Item>
 
-        <Cart />
+        <Cart itemsCart={this.props}/>
       </Menu>
     )
   }

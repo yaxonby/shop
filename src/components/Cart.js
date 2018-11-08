@@ -13,14 +13,19 @@ console.log("Гюльчитай открой корзину",this.state.popUp)
 render ()
 {
 const visibleCart=this.state.popUp ? "block": "none"
-const {ItemToCart, deleteItemToCart}=this.props
+const {deleteItemToCart, itemsCart}=this.props
 
+const Cart=itemsCart.itemsCart.itemsCart
+console.log(Cart)
 return (
   <article  class="CartMenu"  onClick={this.popUpCart.bind(this)} >
   Корзина:
 <div>
-кол-во ()<span>{}</span>
- цена ()<span>{}</span> </div>
+кол-во
+<span>{Cart.reduce(function(x, y) {return (x+(y.item))}, 0)}шт.</span>
+ цена
+ <span>{Cart.reduce(function(x, y) {return (x+(y.price*y.item))}, 0)}руб.</span>
+  </div>
 <div>    </div>
 
 <div class="popUpCart"  style={ {display:visibleCart } }>
@@ -31,22 +36,33 @@ return (
 <br />
 <ul>
 
-{
-ItemToCart.map(function(elem, index) {
-return (
-<li key={index}> {elem.title}</li>
-)
-}
-)
-}
 
+{
+Cart.map(function(elem, index) {
+return (
+<li key={index}> {elem.title}  {elem.item}шт.  цена:{elem.price*elem.item}руб.</li>
+)
+}
+)
+}
 
 
 </ul>
+<div> Итого: {Cart.reduce(function(x, y) {return (x+(y.item))}, 0)}шт.
+ {Cart.reduce(function(x, y) {return (x+(y.price*y.item))}, 0)}руб. </div>
+
  </div>
   </article>
 )}
 }
+
+/*
+
+
+
+*/
+
+
 
 //{this.val? "none": "block"}
 

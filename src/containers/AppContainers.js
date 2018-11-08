@@ -29,7 +29,9 @@ return ArraySort.filter(function(x) {
 
 export default connect(
 state=> ({
-  testStore: serch(state.books.ItemBook, state.books.FilterBy, state.books.FilterWord)
+  testStore: serch(state.books.ItemBook, state.books.FilterBy, state.books.FilterWord),
+  itemsCart: state.books.ItemToCart,
+
 }),
 dispatch => ({
   AddBooks: (book)=> {

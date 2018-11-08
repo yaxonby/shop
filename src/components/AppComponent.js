@@ -32,7 +32,7 @@ const {testStore}=this.props;
 
   return (
 <section>
-<Menu />
+<Menu itemsCart={this.props}/>
 <Filter />
 <div>
 {!testStore ? "Загрузка..."
